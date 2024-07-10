@@ -22,7 +22,7 @@ function Contact() {
     e.preventDefault();
   
     try {
-      const response = await fetch('/api/submit-form', { // Update the URL here
+      const response = await fetch('/api/server', { // Update the URL here
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
