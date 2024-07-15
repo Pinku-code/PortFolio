@@ -63,16 +63,61 @@
   margin-top: 20px; /* Added margin for spacing */
 }
 
-.colorMode {
+/* .colorMode {
   position: absolute;
-  right: 10px; /* Adjusted right position */
-  top: 10px; /* Positioned slightly lower */
+  right: 10px; 
+  top: 10px; 
   width: 25px;
 }
 
 .colorMode:hover {
   cursor: pointer;
+} */
+
+.colorMode {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px; /* Adjust width for iOS-like appearance */
+  height: 25px; /* Adjust height for iOS-like appearance */
+  background-color: #eee; /* Light background color */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 15px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between the switch and background */
+  padding: 2px; /* Add padding for better spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.colorMode::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; /* Circular shape */
+  background-color: #fff; /* White circle */
+  transform: translateX(0); /* Initial position */
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.colorMode.dark::before {
+  transform: translateX(15px); /* Move to the right for dark mode */
+}
+
+.colorMode:hover {
+  background-color: #ddd; /* Lighter background color on hover */
+}
+
+.colorMode:focus {
+  outline: none; /* Remove focus outline */
+}
+
+
+
+
+
 
 .description {
   max-width: 100%; /* Ensure description text wraps */
