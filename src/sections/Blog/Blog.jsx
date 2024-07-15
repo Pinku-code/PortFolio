@@ -42,6 +42,8 @@ function Blog() {
   ];
 
   return (
+    <>
+    <h1 className='title'>Blogs</h1>
     <div className="blog-container">
       {blogs.map((blog, index) => (
         <BlogCard 
@@ -52,7 +54,8 @@ function Blog() {
         />
       ))}
     </div>
+    </>
   );
-};
+}
 
 export default Blog;

@@ -1,4 +1,9 @@
 /* styles.css */
+.title{
+  display: flex;
+  flex-direction: column; 
+  text-align: center;
+}
 
 /* Container for the blog cards */
 .blog-container {

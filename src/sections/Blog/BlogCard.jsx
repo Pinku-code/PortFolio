@@ -4,6 +4,7 @@ import './Styles.css';
 
 function BlogCard({ title, image, description }) {
   return (
+    <>
     <div className="blog-card">
       <img src={image} alt={title} />
       <div className="content">
@@ -11,8 +12,9 @@ function BlogCard({ title, image, description }) {
         <p>{description}</p>
       </div>
     </div>
+    </>
   );
-};
+}
 
 BlogCard.propTypes = {
   title: PropTypes.string.isRequired,
