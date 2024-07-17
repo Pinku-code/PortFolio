@@ -63,23 +63,12 @@
   margin-top: 20px; /* Added margin for spacing */
 }
 
-/* .colorMode {
-  position: absolute;
-  right: 10px; 
-  top: 10px; 
-  width: 25px;
-}
-
-.colorMode:hover {
-  cursor: pointer;
-} */
-
 .colorMode {
   position: absolute;
   right: 10px;
   top: 10px;
-  width: 40px; /* Adjust width for iOS-like appearance */
-  height: 25px; /* Adjust height for iOS-like appearance */
+  width: 50px; /* Adjust width for iOS-like appearance */
+  height: 30px; /* Adjust height for iOS-like appearance */
   background-color: #eee; /* Light background color */
   border: 1px solid #ccc; /* Light border */
   border-radius: 15px; /* Rounded corners */
@@ -88,36 +77,44 @@
   justify-content: space-between; /* Space between the switch and background */
   padding: 2px; /* Add padding for better spacing */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* Remove blue highlight on mobile devices */
 }
 
 .colorMode::before {
   content: '';
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%; /* Circular shape */
   background-color: #fff; /* White circle */
   transform: translateX(0); /* Initial position */
-  transition: transform 0.3s ease; /* Smooth animation */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animation */
 }
 
-.colorMode.dark::before {
-  transform: translateX(15px); /* Move to the right for dark mode */
+.colorMode.on {
+  background-color: #4cd964; /* Green background color for on state */
+  border: 1px solid #4cd964; /* Green border for on state */
+}
+
+.colorMode.on::before {
+  transform: translateX(20px); /* Move to the right for on state */
 }
 
 .colorMode:hover {
   background-color: #ddd; /* Lighter background color on hover */
 }
 
-.colorMode:focus {
-  outline: none; /* Remove focus outline */
+.colorMode.on:hover {
+  background-color: #3ac94b; /* Darker green on hover when on */
 }
 
-
-
-
-
+.colorMode:focus,
+.colorMode:active {
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Remove any box-shadow */
+  background-color: inherit; /* Keep background color */
+}
 
 .description {
   max-width: 100%; /* Ensure description text wraps */
