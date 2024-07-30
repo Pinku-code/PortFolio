@@ -48,7 +48,7 @@ function Hero() {
             Experienced software developer<br/> skilled in the <i className="fab fa-leaf"></i> <b style={{color:"#009ff8"}}>MERN</b> stack.
         </p>
         <a href={CV} download>
-          <button className={styles.hover}>Resume</button>
+          <button className={styles.hover} id="resume">Resume</button>
         </a>
       </div>
     </section>
